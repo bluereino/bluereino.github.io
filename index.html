@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-color: #ff9ca5;
+			
+		}
+		div,input,output,text,b,h1{
+			vertical-align: middle;
+			text-align: center;
+			background-color: #42c8f5;
+			color: white;
+		}
+		body>div{
+			border: 8px dashed red;
+			border-radius: 0px;
+			min-width: 750px;
+			min-height: 500px;
+			max-width: 750px;
+            max-height: 500px;
+			float: center;
+		}
+		div{
+			border-radius: 25px;
+		}
+		.imgs{
+		    max-width: 600px;
+		    max-height: 350px;
+		}
+	</style>
+	<title>Abi's Super Power Quiz</title>
+</head>
+<body>
+	<div>
+		<h1>Which Superpower Should You Have?</h1>
+		<input type="checkbox" id="noImage"> Check the box to not display images
+		<br>
+		<output id="quesnum"></output>
+		<form name="PowersQuiz">
+		<div id="quest1">
+		<b>Do you like Superpowers?</b>
+		<br>
+		<input type="radio" name="quest1" value="y" onclick="ques1()">Yes</input>
+		<input type="radio" name="quest1" value="n" onclick="ques1()">No</input>
+		</div>
+		<div id="quest1-out">
+			<text>You have no powers</text>
+			<br>
+			<img class="imgs" id="img1" src="http://bit.ly/3apJbaw"> <!--fill link-->
+		</div>
+		<div id="quest2">
+		<b>Do you like to run?</b>
+		<br>
+		<input type="radio" name="quest2" value="y" onclick="ques2()">Yes</input>
+		<input type="radio" name="quest2" value="n" onclick="ques2()">No</input>
+		</div>
+		<div id="quest2-out">
+			<text>You have super speed powers</text>
+			<br>
+			<img class="imgs" id="img2" src="http://bit.ly/2wolz7q"> <!--fill link-->
+		</div>
+		<div id="quest3">
+		<b>Do you like to travel?</b>
+		<br>
+		<input type="radio" name="quest3" value="y" onclick="ques3()">Yes</input>
+		<input type="radio" name="quest3" value="n" onclick="ques3()">No</input>
+		</div>
+		<div id="quest3-out">
+			<text>You have teleportation powers</text>
+			<br>
+			<img class="imgs" id="img3" src="http://bit.ly/2TtT28g "> <!--fill link-->
+		</div>
+		<div id="quest4">
+		<b>Do you like the air?</b>
+		<br>
+		<input type="radio" name="quest4" value="y" onclick="ques4()">Yes</input>
+		<input type="radio" name="quest4" value="n" onclick="ques4()">No</input>
+		</div>
+		<div id="quest4-out">
+			<text>You have flying powers</text>
+			<br>
+			<img class="imgs" id="img4" src="http://bit.ly/2TwRcDK"> <!--fill link-->
+		</div>
+		<div id="quest5">
+		<b>Do you like night time?</b>
+		<br>
+		<input type="radio" name="quest5" value="y" onclick="ques5()">Yes</input>
+		<input type="radio" name="quest5" value="n" onclick="ques5()">No</input>
+		</div>
+		<div id="quest5-out">
+			<text>You have night vision powers</text>
+			<br>
+			<img class="imgs" id="img5" src="http://bit.ly/3anu6pJ"> <!--fill link-->
+		</div>
+		<div id="last">
+			<text>You have the power to breathe underwater</text>
+			<br>
+			<img class="imgs" id="img6" src="http://bit.ly/2x1KfCN"> <!--fill link-->
+		</div>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById('quest1-out').style.display = "none";
+		document.getElementById('quest2').style.display = "none";
+		document.getElementById('quest2-out').style.display = "none";
+		document.getElementById('quest3').style.display = "none";
+		document.getElementById('quest3-out').style.display = "none";
+		document.getElementById('quest4').style.display = "none";
+		document.getElementById('quest4-out').style.display = "none";
+		document.getElementById('quest5').style.display = "none";
+		document.getElementById('quest5-out').style.display = "none";
+		document.getElementById('last').style.display = "none";
+		var quesno = 1;
+		quesnumshow();
+		function ques1() {
+			if(document.PowersQuiz.quest1.value=="n") {
+				document.getElementById('quest1').style.display = "none";
+				document.getElementById('quesnum').style.display = "none";
+				document.getElementById('quest1-out').style.display = "block";
+				imagenoShow();
+			}
+			else {
+				document.getElementById('quest1').style.display = "none";
+				document.getElementById('quest2').style.display = "block";
+				quesno++;
+				quesnumshow();
+				imagenoShow();
+			}
+		}
+		function ques2() {
+			if(document.PowersQuiz.quest2.value=="y") {
+				document.getElementById('quest2').style.display = "none";
+				document.getElementById('quesnum').style.display = "none";
+				document.getElementById('quest2-out').style.display = "block";
+				imagenoShow();
+			}
+			else {
+				document.getElementById('quest2').style.display = "none";
+				document.getElementById('quest3').style.display = "block";
+				quesno++;
+				quesnumshow();
+				imagenoShow();
+			}
+		}
+		function ques3() {
+			if(document.PowersQuiz.quest3.value=="y") {
+				document.getElementById('quest3').style.display = "none";
+				document.getElementById('quesnum').style.display = "none";
+				document.getElementById('quest3-out').style.display = "block";
+				imagenoShow();
+			}
+			else {
+				document.getElementById('quest3').style.display = "none";
+				document.getElementById('quest4').style.display = "block";
+				quesno++;
+				quesnumshow();
+				imagenoShow();
+			}
+		}
+		function ques4() {
+			if(document.PowersQuiz.quest4.value=="y") {
+				document.getElementById('quest4').style.display = "none";
+				document.getElementById('quesnum').style.display = "none";
+				document.getElementById('quest4-out').style.display = "block";
+				imagenoShow();
+			}
+			else {
+				document.getElementById('quest4').style.display = "none";
+				document.getElementById('quest5').style.display = "block";
+				quesno++;
+				quesnumshow();
+				imagenoShow();
+			}
+		}
+		function ques5() {
+			if(document.PowersQuiz.quest5.value=="y") {
+				document.getElementById('quest5').style.display = "none";
+				document.getElementById('quest5-out').style.display = "block";
+				document.getElementById('quesnum').style.display = "none";
+				imagenoShow();
+			}
+			else {
+				document.getElementById('quest5').style.display = "none";
+				document.getElementById('last').style.display = "block";
+				document.getElementById('quesnum').style.display = "none";
+				imagenoShow();
+			}
+		}
+		function quesnumshow() {
+			document.getElementById('quesnum').value = "Question "+quesno+" of 5";
+			imagenoShow();
+		}
+		function imagenoShow() {
+			if(document.getElementById('noImage').checked==true) {
+				document.getElementById('img1').src = "";
+				document.getElementById('img2').src = "";
+				document.getElementById('img3').src = "";
+				document.getElementById('img4').src = "";
+				document.getElementById('img5').src = "";
+				document.getElementById('img6').src = "";
+			}
+			else{
+				console.log("img:We are alive ahooo");
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
